@@ -3,6 +3,9 @@ import pyautogui
 import random
 import keyboard
 
+word_file = open('words.txt', 'r')
+words = word_file.read()
+
 print("Press ENTER to start after you tab into Edge")
 keyboard.wait('enter')
 
@@ -13,10 +16,12 @@ pyautogui.hotkey('ctrl', 't')
 # Desktop Rewards
 for x in range(34):
     pyautogui.hotkey('alt', 'd')
-    pyautogui.typewrite(str(random.random()))
+    search_length = random.randint(1, 4)
+    for y in range(search_length):
+        pyautogui.typewrite(f"{words[random.randint(0, words.length - 1)]} ")
     pyautogui.keyDown('enter')
     print(x, "/34")
-    time.sleep(random.random() * 5)
+    time.sleep(6)
 
 print("Finished Desktop Search Rewards.")
 
@@ -27,10 +32,12 @@ pyautogui.hotkey('ctrl', 'shift', 'i')
 time.sleep(random.random() * 5)
 
 for x in range(20):
-    time.sleep(random.random() * 5)
     pyautogui.hotkey('alt', 'd')
-    pyautogui.typewrite(str(random.random()))
+    search_length = random.randint(1, 4)
+    for y in range(search_length):
+        pyautogui.typewrite(f"{words[random.randint(0, words.length - 1)]} ")
     pyautogui.keyDown('enter')
     print(x, "/20")
+    time.sleep(6)
 
 print("Finished Mobile Search Rewards.")
