@@ -22,7 +22,7 @@ print("Completing Desktop Search Rewards...")
 pyautogui.hotkey('ctrl', 't')
 
 # Desktop Rewards
-randomSearch(34)
+#randomSearch(34)
 
 print("Finished Desktop Search Rewards.")
 
